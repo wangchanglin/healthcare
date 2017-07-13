@@ -1,4 +1,4 @@
-package com.ihealth.domian;
+package com.ihealth.domian.entity;
 
 /**
  * Created by changlin on 2017/7/11.

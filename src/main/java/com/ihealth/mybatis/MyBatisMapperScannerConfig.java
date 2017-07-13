@@ -1,13 +1,12 @@
-package com.ihealth.mybaits;
-
-import java.util.Properties;
+package com.ihealth.mybatis;
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
+
+import java.util.Properties;
 
 
 /**
@@ -22,7 +21,7 @@ public class MyBatisMapperScannerConfig {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
         //这里的BasePackage 不能写com.training,估计跟spring 的扫描冲突,会实例化两个service,应该需要重构目录
-        mapperScannerConfigurer.setBasePackage("com.ihealth.*.mapper");
+        mapperScannerConfigurer.setBasePackage("com.training.*.mapper");
         Properties properties = new Properties();
         properties.setProperty("mappers", Mapper.class.getName());
         properties.setProperty("notEmpty", "false");

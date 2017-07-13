@@ -1,4 +1,4 @@
-package com.ihealth.mybaits;
+package com.ihealth.mybatis;
 
 import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
@@ -17,10 +17,11 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 
 import javax.sql.DataSource;
 import java.util.Properties;
-/**
- * Created by changlin on 2017/7/11.
- */
 
+/**
+ * Created by Athos on 2016-10-13.
+ */
+@Configuration
 @EnableTransactionManagement
 public class MyBatisConfig implements TransactionManagementConfigurer {
 
@@ -31,7 +32,7 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
     public SqlSessionFactory sqlSessionFactoryBean() {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setTypeAliasesPackage("com.ihealth");
+        bean.setTypeAliasesPackage("com.training");
 
         //分页插件
         PageHelper pageHelper = new PageHelper();
